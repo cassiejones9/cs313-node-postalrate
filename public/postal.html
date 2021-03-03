@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Math Operations</h2>
+        <div>
+            <h6>Let's do some math! Pick some numbers and an operation!</h6>
+            <form action="/math_service" method="GET">
+                <input type="number" name="operand1" required>
+                <select name="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" name="operand2" required>
+                <input type="submit" name="solve" value="Solve">
+                <button name="ajax" value="AJAX" onclick="getJson()"></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    function getJson() {
+        fetch('math_service')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+</script>
+
+</html>
