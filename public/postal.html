@@ -13,7 +13,7 @@
         <h2>Math Operations</h2>
         <div>
             <h6>Let's do some math! Pick some numbers and an operation!</h6>
-            <form action="/math_service" method="GET">
+            <form action="/calculate" method="GET">
                 <input type="number" name="operand1" required>
                 <select name="operation">
                     <option value="+">+</option>
@@ -29,12 +29,6 @@
     </div>
 
 </body>
-<script>
-    function getJson() {
-        fetch('math_service')
-            .then(response => response.json())
-            .then(data => console.log(data));
-    }
-</script>
+<!--  -->
 
 </html>
